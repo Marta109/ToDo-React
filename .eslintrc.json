@@ -1,0 +1,46 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "babel"],
+  "rules": {
+    "no-console": "warn",
+    "no-unused-vars": [
+      "error",
+      {"caughtErrorsIgnorePattern": "^ignore"}
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {"extensions": [".js", ".jsx"]}
+    ],
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": "error",
+    "react/prop-types": "off",
+    "indent": ["error", 2],
+    "linebreak-style": ["off", "windows"],
+    "quotes": ["warn", "double"],
+    "semi": ["error", "always"],
+    "babel/new-cap": 1,
+    "babel/camelcase": 1,
+    "babel/no-invalid-this": 1,
+    "babel/object-curly-spacing": 1,
+    "babel/quotes": 1,
+    "babel/semi": 1,
+    "babel/no-unused-expressions": 1,
+    "babel/valid-typeof": 1
+  }
+}
