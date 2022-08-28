@@ -1,5 +1,6 @@
 import React from "react";
 import "./todo-list-item.css";
+// import {ListGroup, Button} from "react-bootstrap";
 
 export default class ToDoListItem extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ export default class ToDoListItem extends React.Component {
     this.state = {
       important: false,
       chaked: false,
+      active: false,
     };
   }
 
@@ -18,6 +20,11 @@ export default class ToDoListItem extends React.Component {
   onChacked = () => {
     this.setState(({chaked}) => ({
       chaked: !chaked,
+    }));
+  };
+  onActive = () => {
+    this.setState(({active}) => ({
+      active: !active,
     }));
   };
 
@@ -40,15 +47,13 @@ export default class ToDoListItem extends React.Component {
       <div className={classNames}>
         {del}
         <div className="d-flex justify-content-center align-items-center">
-          <button
-            type="button"
-            className="btn-chakbox btn-sm "
-            onClick={this.onChacked}>
+          <button type="button" className="btn-chakbox btn-sm ">
             <input
               className="form-check-input"
               type="checkbox"
               value=""
               id="flexCheckDefault"
+              onClick={this.onChacked}
               checked={this.chaked}
             />
           </button>
@@ -63,6 +68,31 @@ export default class ToDoListItem extends React.Component {
           </button>
         </div>
       </div>
+      // <div className={classNames}>
+      //   {del}
+      //   <ListGroup.Item as="li" active={active}>
+      //     {label}
+      //     <Button type="button" className="btn-chakbox btn-sm ">
+      //       <input
+      //         className="form-check-input"
+      //         type="checkbox"
+      //         value=""
+      //         id="flexCheckDefault"
+      //         onClick={this.onChacked}
+      //         checked={this.chaked}
+      //       />
+      //     </Button>
+      //     <Button type="button" className="btn-trash btn-sm ">
+      //       <i className="bi bi-trash-fill"></i>
+      //     </Button>
+      //     <Button
+      //       type="button"
+      //       className="btn-star btn-star "
+      //       onClick={this.onImportant}>
+      //       <i className="fas fa-star"></i>
+      //     </Button>
+      //   </ListGroup.Item>
+      // </div>
     );
   }
 }

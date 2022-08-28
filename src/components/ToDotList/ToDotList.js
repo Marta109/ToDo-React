@@ -1,5 +1,6 @@
 import React from "react";
 import ToDoListItem from "../ToDoListItem/ToDoListItem";
+import ListGroup from "react-bootstrap/ListGroup";
 import "./todo-list.css";
 const ToDoList = ({todos}) => {
   const todoElm = todos.map((item) => {
@@ -17,7 +18,10 @@ const ToDoList = ({todos}) => {
     );
   });
 
-  return <ul className="app-list list-group">{todoElm}</ul>;
+  return (
+    // <ul className="app-list list-group">{todoElm}</ul>
+    <ListGroup as="ul" className="app-list list-group" > {todoElm}</ListGroup>
+  );
 };
 
 export default ToDoList;
