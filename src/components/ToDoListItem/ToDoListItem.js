@@ -29,7 +29,7 @@ export default class ToDoListItem extends React.Component {
   };
 
   render() {
-    const {label} = this.props;
+    const {label, onDelete} = this.props;
     let {important, chaked} = this.state;
     let del = <span className="app-list-item-label ">{label}</span>;
     let classNames = "app-list-item d-flex justify-content-between";
@@ -57,7 +57,10 @@ export default class ToDoListItem extends React.Component {
               checked={this.chaked}
             />
           </button>
-          <button type="button" className="btn-trash btn-sm ">
+          <button
+            type="button"
+            className="btn-trash btn-sm "
+            onClick={onDelete}>
             <i className="bi bi-trash-fill"></i>
           </button>
           <button

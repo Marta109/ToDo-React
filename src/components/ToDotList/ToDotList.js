@@ -2,7 +2,7 @@ import React from "react";
 import ToDoListItem from "../ToDoListItem/ToDoListItem";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./todo-list.css";
-const ToDoList = ({todos}) => {
+const ToDoList = ({todos, onDelete}) => {
   const todoElm = todos.map((item) => {
     const {id, ...itemProps} = item;
     return (
@@ -13,6 +13,7 @@ const ToDoList = ({todos}) => {
         /> */}
         <ToDoListItem
           {...itemProps} // using spred poerator
+          onDelete={() => onDelete(id)}
         />
       </li>
     );
@@ -20,7 +21,9 @@ const ToDoList = ({todos}) => {
 
   return (
     // <ul className="app-list list-group">{todoElm}</ul>
-    <ListGroup as="ul" className="app-list list-group" > {todoElm}</ListGroup>
+    <ListGroup as="ul" className="app-list list-group">
+      {todoElm}
+    </ListGroup>
   );
 };
 
