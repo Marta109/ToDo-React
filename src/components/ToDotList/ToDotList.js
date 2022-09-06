@@ -2,7 +2,12 @@ import React from "react";
 import ToDoListItem from "../ToDoListItem/ToDoListItem";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./todo-list.css";
-const ToDoList = ({todos, onDelete}) => {
+const ToDoList = ({
+  todos,
+  onDelete,
+  onImportant,
+  onChecked,
+}) => {
   const todoElm = todos.map((item) => {
     const {id, ...itemProps} = item;
     return (
@@ -14,6 +19,8 @@ const ToDoList = ({todos, onDelete}) => {
         <ToDoListItem
           {...itemProps} // using spred poerator
           onDelete={() => onDelete(id)}
+          onImportant={() => onImportant(id)}
+          onChecked={() => onChecked(id)}
         />
       </li>
     );
